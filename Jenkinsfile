@@ -63,17 +63,17 @@ pipeline {
               args '-u root --entrypoint=""'
           }
       steps {
-                withCredentials([usernamePassword(credentialsId: 'enterprise-key', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
-                    sh '''
-                        aws --version
-                        yum install jq -y
+          withCredentials([usernamePassword(credentialsId: 'enterprise-key', passwordVariable: 'AWS_SECRET_ACCESS_KEY', usernameVariable: 'AWS_ACCESS_KEY_ID')]) {
+              sh '''
+                  aws --version
+                  yum install jq -y
 
-                        LATEST_TD_REVISION=$(aws ecs register-task-definition --cli-input-json file://aws/task-definition.json | jq '.taskDefinition.revision')
-                        aws ecs update-service --cluster enterprise-project-Prod --service enterprise-Service-Prod --task-definition enterprise-projecy-taskDefinition-Prod:$LATEST_TD_REVISION
-                    '''
-                }
-            }
+                  LATEST_TD_REVISION=$(aws ecs register-task-definition --cli-input-json file://aws/task-definition.json | jq '.taskDefinition.revision')
+                  aws ecs update-service --cluster enterprise-project-Prod --service enterprise-Service-Prod --task-definition enterprise-project-taskDefinition-Prod:$LATEST_TD_REVISION
+              '''
           }
+        }
+      }
     }
   }
 }
