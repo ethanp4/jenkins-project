@@ -12,6 +12,6 @@ describe('App', () => {
   });
   it("displays exact text in marquee", () => {
     render(<App />);
-    expect(screen.getByText(/By: Ethan Pelletier, Eilidh Macsymin/i)).toBeInTheDocument();
+    expect(screen.getByText(/By: Ethan Pelletier, Eilidh Macsymic/i)).toBeInTheDocument();
   });
 });
