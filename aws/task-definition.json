@@ -6,7 +6,7 @@
     "containerDefinitions": [
         {
             "name": "enterpriseImage",
-            "image": "nginx:1.27-alpine",
+            "image": "958261994748.dkr.ecr.us-east-2.amazonaws.com/enterprise-project:latest",
             "portMappings": [
                 {
                     "name": "ngnix-80-tcp",
