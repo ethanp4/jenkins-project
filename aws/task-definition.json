@@ -2,7 +2,7 @@
     "requiresCompatibilities": [
         "FARGATE"
     ],
-    "family": "enterprise-project-TaskDefinition-Prod",
+    "family": "new-enterprise-project-TaskDefinition-Prod",
     "containerDefinitions": [
         {
             "name": "enterpriseImage",
